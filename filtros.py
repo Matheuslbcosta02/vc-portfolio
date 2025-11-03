@@ -1,0 +1,13 @@
+import cv2
+imagem_original = cv2.imread("teste.jpg")
+imagem_media = cv2.blur(imagem_original,(5,5))
+imagem_gaussiano = cv2.GaussianBlur(imagem_original,(5,5),0)
+imagem_mediana = cv2.medianBlur(imagem_original,5)
+imagem_bilateral = cv2.bilateralFilter(imagem_original,4,50,50)
+cv2.imshow("Original", imagem_original)
+cv2.imshow("media",imagem_media)
+cv2.imshow("Gauss",imagem_gaussiano)
+cv2.imshow("mediana",imagem_mediana)
+cv2.imshow("bilateral",imagem_bilateral)
+cv2.waitKey(0)
+cv2.destroyAllWindows()

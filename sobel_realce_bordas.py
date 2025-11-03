@@ -1,0 +1,15 @@
+import cv2
+imagem = cv2.imread("teste.jpg")
+sobelx = cv2.Sobel(imagem,cv2.CV_8U,1,0,ksize = 3)
+sobely = cv2.Sobel(imagem,cv2.CV_8U,0,1,ksize= 3)
+laplaciano = cv2.Laplacian(imagem,cv2.CV_8U)
+cv2.imshow("original",imagem)
+cv2.imshow("sobel x", sobelx)
+cv2.imshow("sobel y",sobely)
+cv2.imshow("laplaciano",laplaciano)
+teste = cv2.GaussianBlur(imagem, (5,5),0)
+teste_laplaciano = cv2.Laplacian(teste,cv2.CV_8U)
+cv2.imshow("gauss-laplaciano",teste_laplaciano)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+

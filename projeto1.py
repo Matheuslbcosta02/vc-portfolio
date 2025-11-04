@@ -27,9 +27,15 @@ while True:
 
             if totalVertices != totalVerticesAnterior:
                 totalVerticesAnterior = totalVertices
-                if totalVertices == 3 : print("triangulo")
-                if totalVertices == 4 : print("quadrado")
-                if totalVertices > 7 : print("circulo")
+                if totalVertices == 3 : 
+                    forma = "triangulo"
+                    print("triangulo")
+                if totalVertices == 4 : 
+                    forma = "quadrado"
+                    print("quadrado")
+                if totalVertices > 7 : 
+                    forma = "circulo"
+                    print("circulo")
 
             if forma != "":
                 cv2.putText(frameRGB,forma,(50,50),cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
@@ -43,4 +49,5 @@ while True:
         break
 
 video.release()
+
 cv2.destroyAllWindows()
